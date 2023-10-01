@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 const {JWT_SECRET} = require('../secrets')
 const { checkUsernameFree, validateUsernamePassword, checkUsernameExists } = require('../middleware/auth-middleware')
 
-router.post('/register', checkUsernameFree, validateUsernamePassword, (req, res, next) => {
+router.post('/register',validateUsernamePassword, checkUsernameFree, (req, res, next) => {
   //res.end('implement register, please!');
   /*
     IMPLEMENT
